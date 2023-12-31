@@ -1,10 +1,10 @@
 Our Group:</br>
-Nguyễn Bùi Anh Khoa
-Nguyễn Ngọc Nguyên Khang
-Nguyễn Hoàng Khang
-Trần Kiện Phong
-Võ Minh Nhựt
-Ngô Thành Tài
+Nguyễn Bùi Anh Khoa</br>
+Nguyễn Ngọc Nguyên Khang</br>
+Nguyễn Hoàng Khang</br>
+Trần Kiện Phong</br>
+Võ Minh Nhựt</br>
+Ngô Thành Tài</br>
 
 Guidance:</br> Local SQL on other Devices
 
