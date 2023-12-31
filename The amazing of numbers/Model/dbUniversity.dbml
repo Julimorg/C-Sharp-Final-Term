@@ -1,0 +1,209 @@
+﻿<?xml version="1.0" encoding="utf-8"?><Database Name="University" Class="dbUniversityDataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
+  <Connection Mode="AppSettings" ConnectionString="Data Source=DESKTOP-JM228I7\MSSQLSERVER2022;Initial Catalog=University;Integrated Security=True" SettingsObjectName="The_amazing_of_numbers.Properties.Settings" SettingsPropertyName="UniversityConnectionString" Provider="System.Data.SqlClient" />
+  <Table Name="dbo.AcaAffPickDay" Member="AcaAffPickDays">
+    <Type Name="AcaAffPickDay">
+      <Column Name="course_name" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="section" Type="System.String" DbType="VarChar(50) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="class_name" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="course_id" Type="System.String" DbType="NVarChar(10) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Association Name="Subject__AcaAffPickDay" Member="Subject_" ThisKey="course_id" OtherKey="course_id" Type="Subject_" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Academic_Affair" Member="Academic_Affairs">
+    <Type Name="Academic_Affair">
+      <Column Name="id" Type="System.String" DbType="NVarChar(100) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="username" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="name_" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="sex" Type="System.String" DbType="NVarChar(20)" CanBeNull="true" />
+      <Column Name="dob" Type="System.String" DbType="NVarChar(20)" CanBeNull="true" />
+      <Column Name="phone_num" Type="System.String" DbType="NVarChar(15)" CanBeNull="true" />
+      <Column Name="department_id" Type="System.String" DbType="NVarChar(10)" CanBeNull="true" />
+      <Column Name="picture" Type="System.Data.Linq.Binary" DbType="Image" CanBeNull="true" UpdateCheck="Never" />
+      <Association Name="Department_Academic_Affair" Member="Department" ThisKey="department_id" OtherKey="department_id" Type="Department" IsForeignKey="true" />
+      <Association Name="User_Academic_Affair" Member="User" ThisKey="id" OtherKey="id" Type="User" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Admin" Member="Admins">
+    <Type Name="Admin">
+      <Column Name="id" Type="System.String" DbType="NVarChar(100) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="usename" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="name_" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="sex" Type="System.String" DbType="NVarChar(20)" CanBeNull="true" />
+      <Column Name="phone_num" Type="System.String" DbType="NVarChar(15)" CanBeNull="true" />
+      <Column Name="dob" Type="System.String" DbType="NVarChar(20)" CanBeNull="true" />
+      <Column Name="picture" Type="System.Data.Linq.Binary" DbType="Image" CanBeNull="true" UpdateCheck="Never" />
+      <Association Name="User_Admin" Member="User" ThisKey="id" OtherKey="id" Type="User" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Class" Member="Classes">
+    <Type Name="Class">
+      <Column Name="class_id" Type="System.String" DbType="NVarChar(20) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="date_start" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="date_end" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="room" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="capacity" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="days_" Type="System.String" DbType="NVarChar(20)" CanBeNull="true" />
+      <Column Name="section_start" Type="System.TimeSpan" DbType="Time" CanBeNull="true" />
+      <Column Name="section_end" Type="System.TimeSpan" DbType="Time" CanBeNull="true" />
+      <Association Name="Class_LectureRegisClass" Member="LectureRegisClasses" ThisKey="class_id" OtherKey="class_id" Type="LectureRegisClass" />
+      <Association Name="Class_OpenClass" Member="OpenClasses" ThisKey="class_id" OtherKey="class_id" Type="OpenClass" />
+      <Association Name="Class_StudentRegisClass" Member="StudentRegisClasses" ThisKey="class_id" OtherKey="class_id" Type="StudentRegisClass" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Department" Member="Departments">
+    <Type Name="Department">
+      <Column Name="department_id" Type="System.String" DbType="NVarChar(10) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="department_name" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Association Name="Department_Academic_Affair" Member="Academic_Affairs" ThisKey="department_id" OtherKey="department_id" Type="Academic_Affair" />
+      <Association Name="Department_Lecture" Member="Lectures" ThisKey="department_id" OtherKey="department_id" Type="Lecture" />
+      <Association Name="Department_Student" Member="Students" ThisKey="department_id" OtherKey="department_id" Type="Student" />
+      <Association Name="Department_Subject_" Member="Subject_s" ThisKey="department_id" OtherKey="department_id" Type="Subject_" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Lecture" Member="Lectures">
+    <Type Name="Lecture">
+      <Column Name="id" Type="System.String" DbType="NVarChar(100) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="email" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="name_" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="sex" Type="System.String" DbType="NVarChar(10)" CanBeNull="true" />
+      <Column Name="dob" Type="System.String" DbType="NVarChar(20)" CanBeNull="true" />
+      <Column Name="phone" Type="System.String" DbType="NVarChar(15)" CanBeNull="true" />
+      <Column Name="department_id" Type="System.String" DbType="NVarChar(10)" CanBeNull="true" />
+      <Column Name="status_" Type="System.String" DbType="NVarChar(20)" CanBeNull="true" />
+      <Column Name="Teaching_Experience" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Academic_rank" Type="System.String" DbType="NVarChar(20)" CanBeNull="true" />
+      <Column Name="assigned_subjects" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Column Name="picture" Type="System.Data.Linq.Binary" DbType="Image" CanBeNull="true" UpdateCheck="Never" />
+      <Association Name="Lecture_LecturePickDay" Member="LecturePickDays" ThisKey="id" OtherKey="lectureID" Type="LecturePickDay" />
+      <Association Name="Lecture_LectureRegisClass" Member="LectureRegisClasses" ThisKey="id" OtherKey="id" Type="LectureRegisClass" />
+      <Association Name="Lecture_LectureVio" Member="LectureVios" ThisKey="id" OtherKey="id" Type="LectureVio" />
+      <Association Name="Department_Lecture" Member="Department" ThisKey="department_id" OtherKey="department_id" Type="Department" IsForeignKey="true" />
+      <Association Name="User_Lecture" Member="User" ThisKey="id" OtherKey="id" Type="User" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.LecturePickDay" Member="LecturePickDays">
+    <Type Name="LecturePickDay">
+      <Column Name="lectureID" Type="System.String" DbType="NVarChar(100) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="coure_name" Type="System.String" DbType="VarChar(100) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="section" Type="System.String" DbType="VarChar(50) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="teachExp" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="AcademicRank" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Association Name="Lecture_LecturePickDay" Member="Lecture" ThisKey="lectureID" OtherKey="id" Type="Lecture" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.LectureRegisClass" Member="LectureRegisClasses">
+    <Type Name="LectureRegisClass">
+      <Column Name="id" Type="System.String" DbType="NVarChar(100) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="class_id" Type="System.String" DbType="NVarChar(20) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="date_register" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="status_" Type="System.String" DbType="NVarChar(20)" CanBeNull="true" />
+      <Association Name="Class_LectureRegisClass" Member="Class" ThisKey="class_id" OtherKey="class_id" Type="Class" IsForeignKey="true" />
+      <Association Name="Lecture_LectureRegisClass" Member="Lecture" ThisKey="id" OtherKey="id" Type="Lecture" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.LectureVio" Member="LectureVios">
+    <Type Name="LectureVio">
+      <Column Name="id" Type="System.String" DbType="NVarChar(100) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="rules_id" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="status_" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="date_" Type="System.String" DbType="NVarChar(20)" CanBeNull="true" />
+      <Association Name="Lecture_LectureVio" Member="Lecture" ThisKey="id" OtherKey="id" Type="Lecture" IsForeignKey="true" />
+      <Association Name="Violate_LectureVio" Member="Violate" ThisKey="rules_id" OtherKey="rules_id" Type="Violate" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.OpenClass" Member="OpenClasses">
+    <Type Name="OpenClass">
+      <Column Name="course_id" Type="System.String" DbType="NVarChar(10) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="class_id" Type="System.String" DbType="NVarChar(20) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="date_open" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="date_close" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Association Name="Class_OpenClass" Member="Class" ThisKey="class_id" OtherKey="class_id" Type="Class" IsForeignKey="true" />
+      <Association Name="Subject__OpenClass" Member="Subject_" ThisKey="course_id" OtherKey="course_id" Type="Subject_" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.PractiseScore" Member="PractiseScores">
+    <Type Name="PractiseScore">
+      <Column Name="id" Type="System.String" DbType="NVarChar(100) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="school_year" Type="System.String" DbType="NVarChar(50) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="semester" Type="System.String" DbType="NVarChar(10) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="score" Type="System.Decimal" DbType="Decimal(18,1)" CanBeNull="true" />
+      <Column Name="learning_score" Type="System.Decimal" DbType="Decimal(18,1)" CanBeNull="true" />
+      <Association Name="Student_PractiseScore" Member="Student" ThisKey="id" OtherKey="id" Type="Student" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Student" Member="Students">
+    <Type Name="Student">
+      <Column Name="id" Type="System.String" DbType="NVarChar(100) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="name_" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="sex" Type="System.String" DbType="NVarChar(20)" CanBeNull="true" />
+      <Column Name="school_year" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="dob" Type="System.String" DbType="NVarChar(20)" CanBeNull="true" />
+      <Column Name="phone_num" Type="System.String" DbType="NVarChar(15)" CanBeNull="true" />
+      <Column Name="department_id" Type="System.String" DbType="NVarChar(10)" CanBeNull="true" />
+      <Column Name="tot_cred" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="status_" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="picture" Type="System.Data.Linq.Binary" DbType="Image" CanBeNull="true" UpdateCheck="Never" />
+      <Association Name="Student_PractiseScore" Member="PractiseScores" ThisKey="id" OtherKey="id" Type="PractiseScore" />
+      <Association Name="Student_StudentRegisClass" Member="StudentRegisClasses" ThisKey="id" OtherKey="id" Type="StudentRegisClass" />
+      <Association Name="Student_StudentVio" Member="StudentVios" ThisKey="id" OtherKey="id" Type="StudentVio" />
+      <Association Name="Department_Student" Member="Department" ThisKey="department_id" OtherKey="department_id" Type="Department" IsForeignKey="true" />
+      <Association Name="User_Student" Member="User" ThisKey="id" OtherKey="id" Type="User" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.StudentRegisClass" Member="StudentRegisClasses">
+    <Type Name="StudentRegisClass">
+      <Column Name="id" Type="System.String" DbType="NVarChar(100) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="class_id" Type="System.String" DbType="NVarChar(20) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="date_register" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="status_" Type="System.String" DbType="NVarChar(20)" CanBeNull="true" />
+      <Column Name="score" Type="System.Decimal" DbType="Decimal(18,1)" CanBeNull="true" />
+      <Column Name="tuition_status" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Association Name="Class_StudentRegisClass" Member="Class" ThisKey="class_id" OtherKey="class_id" Type="Class" IsForeignKey="true" />
+      <Association Name="Student_StudentRegisClass" Member="Student" ThisKey="id" OtherKey="id" Type="Student" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.StudentVio" Member="StudentVios">
+    <Type Name="StudentVio">
+      <Column Name="id" Type="System.String" DbType="NVarChar(100) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="rules_id" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="status_" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="date_" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Association Name="Student_StudentVio" Member="Student" ThisKey="id" OtherKey="id" Type="Student" IsForeignKey="true" />
+      <Association Name="Violate_StudentVio" Member="Violate" ThisKey="rules_id" OtherKey="rules_id" Type="Violate" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Subject_" Member="Subject_s">
+    <Type Name="Subject_">
+      <Column Name="course_id" Type="System.String" DbType="NVarChar(10) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="course_name" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="department_id" Type="System.String" DbType="NVarChar(10)" CanBeNull="true" />
+      <Column Name="credits" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="cost" Type="System.Decimal" DbType="Decimal(18,0)" CanBeNull="true" />
+      <Association Name="Subject__AcaAffPickDay" Member="AcaAffPickDays" ThisKey="course_id" OtherKey="course_id" Type="AcaAffPickDay" />
+      <Association Name="Subject__OpenClass" Member="OpenClasses" ThisKey="course_id" OtherKey="course_id" Type="OpenClass" />
+      <Association Name="Department_Subject_" Member="Department" ThisKey="department_id" OtherKey="department_id" Type="Department" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Users" Member="Users">
+    <Type Name="User">
+      <Column Name="id" Type="System.String" DbType="NVarChar(100) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="password_" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="role_" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="pin" Type="System.String" DbType="NVarChar(6)" CanBeNull="true" />
+      <Association Name="User_Academic_Affair" Member="Academic_Affair" ThisKey="id" OtherKey="id" Type="Academic_Affair" Cardinality="One" />
+      <Association Name="User_Admin" Member="Admin" ThisKey="id" OtherKey="id" Type="Admin" Cardinality="One" />
+      <Association Name="User_Lecture" Member="Lecture" ThisKey="id" OtherKey="id" Type="Lecture" Cardinality="One" />
+      <Association Name="User_Student" Member="Student" ThisKey="id" OtherKey="id" Type="Student" Cardinality="One" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Violate" Member="Violates">
+    <Type Name="Violate">
+      <Column Name="rules_id" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="rules_name" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="rules_punishment" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="object_" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Association Name="Violate_LectureVio" Member="LectureVios" ThisKey="rules_id" OtherKey="rules_id" Type="LectureVio" />
+      <Association Name="Violate_StudentVio" Member="StudentVios" ThisKey="rules_id" OtherKey="rules_id" Type="StudentVio" />
+    </Type>
+  </Table>
+</Database>

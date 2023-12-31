@@ -1,0 +1,1231 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{D8DAA3CD-446F-4754-BC15-90C95387F014}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <RootNamespace>The_amazing_of_numbers</RootNamespace>
+    <AssemblyName>The amazing of numbers</AssemblyName>
+    <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <Deterministic>true</Deterministic>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="AForge, Version=2.2.5.0, Culture=neutral, PublicKeyToken=c1db6ff4eaa06aeb, processorArchitecture=MSIL">
+      <HintPath>..\packages\AForge.2.2.5\lib\AForge.dll</HintPath>
+    </Reference>
+    <Reference Include="AForge.Video, Version=2.2.5.0, Culture=neutral, PublicKeyToken=cbfb6e07d173c401, processorArchitecture=MSIL">
+      <HintPath>..\packages\AForge.Video.2.2.5\lib\AForge.Video.dll</HintPath>
+    </Reference>
+    <Reference Include="AForge.Video.DirectShow, Version=2.2.5.0, Culture=neutral, PublicKeyToken=61ea4348d43881b7, processorArchitecture=MSIL">
+      <HintPath>..\packages\AForge.Video.DirectShow.2.2.5\lib\AForge.Video.DirectShow.dll</HintPath>
+    </Reference>
+    <Reference Include="FontAwesome.Sharp, Version=6.3.0.0, Culture=neutral, PublicKeyToken=d16d1e4e568ec10f, processorArchitecture=MSIL">
+      <HintPath>..\packages\FontAwesome.Sharp.6.3.0\lib\net48\FontAwesome.Sharp.dll</HintPath>
+    </Reference>
+    <Reference Include="Guna.UI2, Version=2.0.4.6, Culture=neutral, PublicKeyToken=8b9d14aa5142e261, processorArchitecture=MSIL">
+      <HintPath>..\packages\Guna.UI2.WinForms.2.0.4.6\lib\net48\Guna.UI2.dll</HintPath>
+    </Reference>
+    <Reference Include="Leaf.xNet, Version=5.2.10.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Leaf.xNet.5.2.10\lib\net45\Leaf.xNet.dll</HintPath>
+    </Reference>
+    <Reference Include="MetroFramework, Version=1.2.0.3, Culture=neutral, PublicKeyToken=5f91a84759bf584a, processorArchitecture=MSIL">
+      <HintPath>..\packages\MetroFramework.RunTime.1.2.0.3\lib\net40-Client\MetroFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="MetroFramework.Design, Version=1.2.0.3, Culture=neutral, PublicKeyToken=5f91a84759bf584a, processorArchitecture=MSIL">
+      <HintPath>..\packages\MetroFramework.Design.1.2.0.3\lib\net40\MetroFramework.Design.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="MetroFramework.Fonts, Version=1.2.0.3, Culture=neutral, PublicKeyToken=5f91a84759bf584a, processorArchitecture=MSIL">
+      <HintPath>..\packages\MetroFramework.Fonts.1.2.0.3\lib\net40\MetroFramework.Fonts.dll</HintPath>
+    </Reference>
+    <Reference Include="PresentationCore" />
+    <Reference Include="PresentationFramework" />
+    <Reference Include="QRCoder, Version=1.4.3.0, Culture=neutral, PublicKeyToken=c4ed5b9ae8358a28, processorArchitecture=MSIL">
+      <HintPath>..\packages\QRCoder.1.4.3\lib\net40\QRCoder.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.Composition" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.Linq" />
+    <Reference Include="System.Design" />
+    <Reference Include="System.IO, Version=4.1.1.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.IO.4.3.0\lib\net462\System.IO.dll</HintPath>
+      <Private>True</Private>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Management" />
+    <Reference Include="System.Net.Http, Version=4.1.1.3, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Net.Http.4.3.4\lib\net46\System.Net.Http.dll</HintPath>
+      <Private>True</Private>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Runtime, Version=4.1.1.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Runtime.4.3.0\lib\net462\System.Runtime.dll</HintPath>
+      <Private>True</Private>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Security.Cryptography.Algorithms, Version=4.2.1.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Security.Cryptography.Algorithms.4.3.0\lib\net463\System.Security.Cryptography.Algorithms.dll</HintPath>
+      <Private>True</Private>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Security.Cryptography.Encoding, Version=4.0.1.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Security.Cryptography.Encoding.4.3.0\lib\net46\System.Security.Cryptography.Encoding.dll</HintPath>
+      <Private>True</Private>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Security.Cryptography.Primitives, Version=4.0.1.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Security.Cryptography.Primitives.4.3.0\lib\net46\System.Security.Cryptography.Primitives.dll</HintPath>
+      <Private>True</Private>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Security.Cryptography.X509Certificates, Version=4.1.1.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Security.Cryptography.X509Certificates.4.3.0\lib\net461\System.Security.Cryptography.X509Certificates.dll</HintPath>
+      <Private>True</Private>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Web" />
+    <Reference Include="System.Xaml" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+    <Reference Include="TeleSharp.TL, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\TLSharp.0.1.0.574\lib\net46\TeleSharp.TL.dll</HintPath>
+    </Reference>
+    <Reference Include="TLSharp.Core, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\TLSharp.0.1.0.574\lib\net46\TLSharp.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="WindowsBase" />
+    <Reference Include="zxing, Version=0.16.9.0, Culture=neutral, PublicKeyToken=4e88037ac681fe60, processorArchitecture=MSIL">
+      <HintPath>..\packages\ZXing.Net.0.16.9\lib\net48\zxing.dll</HintPath>
+    </Reference>
+    <Reference Include="zxing.presentation, Version=0.16.9.0, Culture=neutral, PublicKeyToken=4e88037ac681fe60, processorArchitecture=MSIL">
+      <HintPath>..\packages\ZXing.Net.0.16.9\lib\net48\zxing.presentation.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Area\AcademicAffair\View\AcademicAffair_CreateNewPass.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Area\AcademicAffair\View\AcademicAffair_CreateNewPass.Designer.cs">
+      <DependentUpon>AcademicAffair_CreateNewPass.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Area\AcademicAffair\View\AcademicAffair_GeneratePIN_QRcode.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Area\AcademicAffair\View\AcademicAffair_GeneratePIN_QRcode.Designer.cs">
+      <DependentUpon>AcademicAffair_GeneratePIN_QRcode.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Area\AcademicAffair\View\AcademicAffair_ViewDetailLecture.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Area\AcademicAffair\View\AcademicAffair_ViewDetailLecture.Designer.cs">
+      <DependentUpon>AcademicAffair_ViewDetailLecture.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Area\AcademicAffair\View\AcademicAffair_ViewDetailStudent.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Area\AcademicAffair\View\AcademicAffair_ViewDetailStudent.Designer.cs">
+      <DependentUpon>AcademicAffair_ViewDetailStudent.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Area\AcademicAffair\View\AddCourse.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Area\AcademicAffair\View\AddCourse.Designer.cs">
+      <DependentUpon>AddCourse.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Area\AcademicAffair\View\AddingInfomations.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Area\AcademicAffair\View\AddingInfomations.Designer.cs">
+      <DependentUpon>AddingInfomations.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Area\AcademicAffair\View\AddLecture.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Area\AcademicAffair\View\AddLecture.Designer.cs">
+      <DependentUpon>AddLecture.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Area\AcademicAffair\Controllers\AcademicAffairController.cs" />
+    <Compile Include="Area\AcademicAffair\View\AcademicAffairMainForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Area\AcademicAffair\View\AcademicAffairMainForm.Designer.cs">
+      <DependentUpon>AcademicAffairMainForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Area\AcademicAffair\View\DivineJobs.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Area\AcademicAffair\View\DivineJobs.Designer.cs">
+      <DependentUpon>DivineJobs.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Area\AcademicAffair\View\StatisticInfo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Area\AcademicAffair\View\StatisticInfo.Designer.cs">
+      <DependentUpon>StatisticInfo.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Area\AcademicAffair\View\StatisticLecture.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Area\AcademicAffair\View\StatisticLecture.Designer.cs">
+      <DependentUpon>StatisticLecture.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Area\AcademicAffair\View\StatisticStudent.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Area\AcademicAffair\View\StatisticStudent.Designer.cs">
+      <DependentUpon>StatisticStudent.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Area\AcademicAffair\View\ViewClassRegistered.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Area\AcademicAffair\View\ViewClassRegistered.Designer.cs">
+      <DependentUpon>ViewClassRegistered.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Area\AcademicAffair\View\ViewCourse.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Area\AcademicAffair\View\ViewCourse.Designer.cs">
+      <DependentUpon>ViewCourse.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Area\AcademicAffair\View\ViewDepartment.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Area\AcademicAffair\View\ViewDepartment.Designer.cs">
+      <DependentUpon>ViewDepartment.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Area\AcademicAffair\View\ViewInfomations.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Area\AcademicAffair\View\ViewInfomations.Designer.cs">
+      <DependentUpon>ViewInfomations.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Area\AcademicAffair\View\ViewLectureProfile.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Area\AcademicAffair\View\ViewLectureProfile.Designer.cs">
+      <DependentUpon>ViewLectureProfile.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Area\AcademicAffair\View\ViewStudentProfile.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Area\AcademicAffair\View\ViewStudentProfile.Designer.cs">
+      <DependentUpon>ViewStudentProfile.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Area\AdminArea\Controllers\AdminController.cs" />
+    <Compile Include="Area\AdminArea\View\AdminChangePass.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Area\AdminArea\View\AdminChangePass.Designer.cs">
+      <DependentUpon>AdminChangePass.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Area\AdminArea\View\AdminChangePin.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Area\AdminArea\View\AdminChangePin.Designer.cs">
+      <DependentUpon>AdminChangePin.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Area\AdminArea\View\Admin_MarkingLecBehv.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Area\AdminArea\View\Admin_MarkingLecBehv.Designer.cs">
+      <DependentUpon>Admin_MarkingLecBehv.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Area\AdminArea\View\Admin_MarkingStuBehv.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Area\AdminArea\View\Admin_MarkingStuBehv.Designer.cs">
+      <DependentUpon>Admin_MarkingStuBehv.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Area\AdminArea\View\Admin_MatchingSchedule.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Area\AdminArea\View\Admin_MatchingSchedule.Designer.cs">
+      <DependentUpon>Admin_MatchingSchedule.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Area\AdminArea\View\Violates.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Area\AdminArea\View\Violates.Designer.cs">
+      <DependentUpon>Violates.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Area\AdminArea\View\AdminMainForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Area\AdminArea\View\AdminMainForm.Designer.cs">
+      <DependentUpon>AdminMainForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Area\AdminArea\View\AcademicsAffairsFunc.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Area\AdminArea\View\AcademicsAffairsFunc.Designer.cs">
+      <DependentUpon>AcademicsAffairsFunc.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Area\AdminArea\View\ViewProfile.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Area\AdminArea\View\ViewProfile.Designer.cs">
+      <DependentUpon>ViewProfile.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Area\Lecturer\Controllers\LecturerController.cs" />
+    <Compile Include="Area\Lecturer\View\LecturerMainForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Area\Lecturer\View\LecturerMainForm.Designer.cs">
+      <DependentUpon>LecturerMainForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Area\Lecturer\View\Lecturer_ViewClass.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Area\Lecturer\View\Lecturer_ViewClass.Designer.cs">
+      <DependentUpon>Lecturer_ViewClass.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Area\Lecturer\View\Lecturer_ViewDetailedClass.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Area\Lecturer\View\Lecturer_ViewDetailedClass.Designer.cs">
+      <DependentUpon>Lecturer_ViewDetailedClass.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Area\Lecturer\View\LectureStudentScore.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Area\Lecturer\View\LectureStudentScore.Designer.cs">
+      <DependentUpon>LectureStudentScore.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Area\Lecturer\View\LectureViewClasss.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Area\Lecturer\View\LectureViewClasss.Designer.cs">
+      <DependentUpon>LectureViewClasss.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Area\Lecturer\View\Lecture_ChangePass.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Area\Lecturer\View\Lecture_ChangePass.Designer.cs">
+      <DependentUpon>Lecture_ChangePass.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Area\Lecturer\View\Lecture_ChangePin.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Area\Lecturer\View\Lecture_ChangePin.Designer.cs">
+      <DependentUpon>Lecture_ChangePin.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Area\Lecturer\View\Profile_Edit_Lec.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Area\Lecturer\View\Profile_Edit_Lec.Designer.cs">
+      <DependentUpon>Profile_Edit_Lec.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Area\Lecturer\View\RegisterClass.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Area\Lecturer\View\RegisterClass.Designer.cs">
+      <DependentUpon>RegisterClass.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Area\Lecturer\View\RegisterTeach.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Area\Lecturer\View\RegisterTeach.Designer.cs">
+      <DependentUpon>RegisterTeach.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Area\Lecturer\View\StudentListinClass.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Area\Lecturer\View\StudentListinClass.Designer.cs">
+      <DependentUpon>StudentListinClass.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Area\Lecturer\View\TeacherScoringStudent.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Area\Lecturer\View\TeacherScoringStudent.Designer.cs">
+      <DependentUpon>TeacherScoringStudent.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Area\Lecturer\View\Teacher_course.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Area\Lecturer\View\Teacher_course.Designer.cs">
+      <DependentUpon>Teacher_course.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Area\Lecturer\View\Teacher_Fee.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Area\Lecturer\View\Teacher_Fee.Designer.cs">
+      <DependentUpon>Teacher_Fee.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Area\Lecturer\View\Teacher_profile.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Area\Lecturer\View\Teacher_profile.Designer.cs">
+      <DependentUpon>Teacher_profile.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Area\Lecturer\View\Teacher_TeaClas.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Area\Lecturer\View\Teacher_TeaClas.Designer.cs">
+      <DependentUpon>Teacher_TeaClas.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Area\StudentAreas\Controllers\StudentAreasController.cs" />
+    <Compile Include="Area\StudentAreas\View\AlreadyhaveClass.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Area\StudentAreas\View\AlreadyhaveClass.Designer.cs">
+      <DependentUpon>AlreadyhaveClass.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Area\StudentAreas\View\ChangePassWord.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Area\StudentAreas\View\ChangePassWord.Designer.cs">
+      <DependentUpon>ChangePassWord.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Area\StudentAreas\View\DanhGiaRenLuyen.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Area\StudentAreas\View\DanhGiaRenLuyen.Designer.cs">
+      <DependentUpon>DanhGiaRenLuyen.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Area\StudentAreas\View\genaratePin.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Area\StudentAreas\View\genaratePin.Designer.cs">
+      <DependentUpon>genaratePin.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Area\StudentAreas\View\ProfileEdition.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Area\StudentAreas\View\ProfileEdition.Designer.cs">
+      <DependentUpon>ProfileEdition.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Area\StudentAreas\View\RegisterSchedule.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Area\StudentAreas\View\RegisterSchedule.Designer.cs">
+      <DependentUpon>RegisterSchedule.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Area\StudentAreas\View\Score202122.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Area\StudentAreas\View\Score202122.Designer.cs">
+      <DependentUpon>Score202122.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Area\StudentAreas\View\Score202223.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Area\StudentAreas\View\Score202223.Designer.cs">
+      <DependentUpon>Score202223.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Area\StudentAreas\View\Score202425.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Area\StudentAreas\View\Score202425.Designer.cs">
+      <DependentUpon>Score202425.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Area\StudentAreas\View\StudentScore.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Area\StudentAreas\View\StudentScore.Designer.cs">
+      <DependentUpon>StudentScore.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Area\StudentAreas\View\StudentAchievements.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Area\StudentAreas\View\StudentAchievements.Designer.cs">
+      <DependentUpon>StudentAchievements.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Area\StudentAreas\View\StudentForm_CourseButton.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Area\StudentAreas\View\StudentForm_CourseButton.Designer.cs">
+      <DependentUpon>StudentForm_CourseButton.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Area\StudentAreas\View\StudentForm_Progess.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Area\StudentAreas\View\StudentForm_Progess.Designer.cs">
+      <DependentUpon>StudentForm_Progess.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Area\StudentAreas\View\StudentForm_StudentFee.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Area\StudentAreas\View\StudentForm_StudentFee.Designer.cs">
+      <DependentUpon>StudentForm_StudentFee.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Area\StudentAreas\View\StudentForm_StudentProfile.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Area\StudentAreas\View\StudentForm_StudentProfile.Designer.cs">
+      <DependentUpon>StudentForm_StudentProfile.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Area\StudentAreas\View\StudentMainForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Area\StudentAreas\View\StudentMainForm.Designer.cs">
+      <DependentUpon>StudentMainForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Area\StudentAreas\View\StudentViewTheirClass.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Area\StudentAreas\View\StudentViewTheirClass.Designer.cs">
+      <DependentUpon>StudentViewTheirClass.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Area\StudentAreas\View\ViewLearningScore.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Area\StudentAreas\View\ViewLearningScore.Designer.cs">
+      <DependentUpon>ViewLearningScore.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Area\StudentAreas\View\ViewSchedule.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Area\StudentAreas\View\ViewSchedule.Designer.cs">
+      <DependentUpon>ViewSchedule.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Area\StudentAreas\View\ViewTuition.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Area\StudentAreas\View\ViewTuition.Designer.cs">
+      <DependentUpon>ViewTuition.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Area\StudentAreas\View\ViewYourClass.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Area\StudentAreas\View\ViewYourClass.Designer.cs">
+      <DependentUpon>ViewYourClass.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controllers\LoginController.cs" />
+    <Compile Include="Controllers\MatchingController.cs" />
+    <Compile Include="Controllers\OpenClassController.cs" />
+    <Compile Include="Controllers\UpdateAfterGradeController.cs" />
+    <Compile Include="CustomControl\TextBox.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="CustomControl\TextBox.Designer.cs">
+      <DependentUpon>TextBox.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DBUniversity1DataSet.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DBUniversity1DataSet.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Form1.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form1.Designer.cs">
+      <DependentUpon>Form1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Form2.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form2.Designer.cs">
+      <DependentUpon>Form2.cs</DependentUpon>
+    </Compile>
+    <Compile Include="khangdbUniversity.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>khangdbUniversity.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Model\CategorizedSubject.cs" />
+    <Compile Include="Model\ClassLectureTeach.cs" />
+    <Compile Include="Model\ClassStudentLearn.cs" />
+    <Compile Include="Model\dbUniversity.designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>dbUniversity.dbml</DependentUpon>
+    </Compile>
+    <Compile Include="Model\StudentFinalScorecs.cs" />
+    <Compile Include="Model\StudentInfoTuition.cs" />
+    <Compile Include="Model\UserViolations.cs" />
+    <Compile Include="UniversityDataSet.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>UniversityDataSet.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="UniversityDataSet1.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>UniversityDataSet1.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="UniversityDataSet10.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>UniversityDataSet10.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="UniversityDataSet11.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>UniversityDataSet11.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="UniversityDataSet12.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>UniversityDataSet12.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="UniversityDataSet13.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>UniversityDataSet13.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="UniversityDataSet14.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>UniversityDataSet14.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="UniversityDataSet15.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>UniversityDataSet15.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="UniversityDataSet16.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>UniversityDataSet16.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="UniversityDataSet2.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>UniversityDataSet2.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="UniversityDataSet3.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>UniversityDataSet3.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="UniversityDataSet4.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>UniversityDataSet4.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="UniversityDataSet5.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>UniversityDataSet5.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="UniversityDataSet6.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>UniversityDataSet6.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="UniversityDataSet7.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>UniversityDataSet7.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="UniversityDataSet8.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>UniversityDataSet8.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="UniversityDataSet9.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>UniversityDataSet9.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="View\ForgetPassView.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\ForgetPassView.Designer.cs">
+      <DependentUpon>ForgetPassView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\Login.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\Login.Designer.cs">
+      <DependentUpon>Login.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\MatchingCalendar.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\MatchingCalendar.Designer.cs">
+      <DependentUpon>MatchingCalendar.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\PINLogin.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\PINLogin.Designer.cs">
+      <DependentUpon>PINLogin.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="View\QRLogin.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\QRLogin.Designer.cs">
+      <DependentUpon>QRLogin.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Register.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Register.Designer.cs">
+      <DependentUpon>Register.cs</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="Area\AcademicAffair\View\AcademicAffair_CreateNewPass.resx">
+      <DependentUpon>AcademicAffair_CreateNewPass.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Area\AcademicAffair\View\AcademicAffair_GeneratePIN_QRcode.resx">
+      <DependentUpon>AcademicAffair_GeneratePIN_QRcode.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Area\AcademicAffair\View\AcademicAffair_ViewDetailLecture.resx">
+      <DependentUpon>AcademicAffair_ViewDetailLecture.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Area\AcademicAffair\View\AcademicAffair_ViewDetailStudent.resx">
+      <DependentUpon>AcademicAffair_ViewDetailStudent.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Area\AcademicAffair\View\AddCourse.resx">
+      <DependentUpon>AddCourse.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Area\AcademicAffair\View\AddingInfomations.resx">
+      <DependentUpon>AddingInfomations.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Area\AcademicAffair\View\AddLecture.resx">
+      <DependentUpon>AddLecture.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Area\AcademicAffair\View\AcademicAffairMainForm.resx">
+      <DependentUpon>AcademicAffairMainForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Area\AcademicAffair\View\DivineJobs.resx">
+      <DependentUpon>DivineJobs.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Area\AcademicAffair\View\StatisticStudent.resx">
+      <DependentUpon>StatisticStudent.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Area\AcademicAffair\View\ViewClassRegistered.resx">
+      <DependentUpon>ViewClassRegistered.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Area\AcademicAffair\View\ViewCourse.resx">
+      <DependentUpon>ViewCourse.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Area\AcademicAffair\View\ViewDepartment.resx">
+      <DependentUpon>ViewDepartment.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Area\AcademicAffair\View\ViewInfomations.resx">
+      <DependentUpon>ViewInfomations.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Area\AcademicAffair\View\ViewLectureProfile.resx">
+      <DependentUpon>ViewLectureProfile.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Area\AcademicAffair\View\ViewStudentProfile.resx">
+      <DependentUpon>ViewStudentProfile.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Area\AdminArea\View\AcademicsAffairsFunc.resx">
+      <DependentUpon>AcademicsAffairsFunc.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Area\AdminArea\View\AdminChangePass.resx">
+      <DependentUpon>AdminChangePass.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Area\AdminArea\View\AdminChangePin.resx">
+      <DependentUpon>AdminChangePin.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Area\AdminArea\View\Admin_MarkingLecBehv.resx">
+      <DependentUpon>Admin_MarkingLecBehv.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Area\AdminArea\View\Admin_MarkingStuBehv.resx">
+      <DependentUpon>Admin_MarkingStuBehv.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Area\AdminArea\View\Admin_MatchingSchedule.resx">
+      <DependentUpon>Admin_MatchingSchedule.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Area\AdminArea\View\Violates.resx">
+      <DependentUpon>Violates.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Area\AdminArea\View\AdminMainForm.resx">
+      <DependentUpon>AdminMainForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Area\AdminArea\View\ViewProfile.resx">
+      <DependentUpon>ViewProfile.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Area\Lecturer\View\LecturerMainForm.resx">
+      <DependentUpon>LecturerMainForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Area\Lecturer\View\Lecturer_ViewClass.resx">
+      <DependentUpon>Lecturer_ViewClass.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Area\Lecturer\View\Lecturer_ViewDetailedClass.resx">
+      <DependentUpon>Lecturer_ViewDetailedClass.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Area\Lecturer\View\LectureStudentScore.resx">
+      <DependentUpon>LectureStudentScore.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Area\Lecturer\View\LectureViewClasss.resx">
+      <DependentUpon>LectureViewClasss.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Area\Lecturer\View\Lecture_ChangePass.resx">
+      <DependentUpon>Lecture_ChangePass.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Area\Lecturer\View\Lecture_ChangePin.resx">
+      <DependentUpon>Lecture_ChangePin.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Area\Lecturer\View\Profile_Edit_Lec.resx">
+      <DependentUpon>Profile_Edit_Lec.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Area\Lecturer\View\RegisterClass.resx">
+      <DependentUpon>RegisterClass.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Area\Lecturer\View\RegisterTeach.resx">
+      <DependentUpon>RegisterTeach.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Area\Lecturer\View\StudentListinClass.resx">
+      <DependentUpon>StudentListinClass.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Area\Lecturer\View\TeacherScoringStudent.resx">
+      <DependentUpon>TeacherScoringStudent.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Area\Lecturer\View\Teacher_course.resx">
+      <DependentUpon>Teacher_course.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Area\Lecturer\View\Teacher_profile.resx">
+      <DependentUpon>Teacher_profile.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Area\Lecturer\View\Teacher_TeaClas.resx">
+      <DependentUpon>Teacher_TeaClas.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Area\StudentAreas\View\AlreadyhaveClass.resx">
+      <DependentUpon>AlreadyhaveClass.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Area\StudentAreas\View\ChangePassWord.resx">
+      <DependentUpon>ChangePassWord.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Area\StudentAreas\View\genaratePin.resx">
+      <DependentUpon>genaratePin.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Area\StudentAreas\View\ProfileEdition.resx">
+      <DependentUpon>ProfileEdition.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Area\StudentAreas\View\RegisterSchedule.resx">
+      <DependentUpon>RegisterSchedule.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Area\StudentAreas\View\Score202122.resx">
+      <DependentUpon>Score202122.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Area\StudentAreas\View\Score202223.resx">
+      <DependentUpon>Score202223.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Area\StudentAreas\View\Score202425.resx">
+      <DependentUpon>Score202425.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Area\StudentAreas\View\StudentAchievements.resx">
+      <DependentUpon>StudentAchievements.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Area\StudentAreas\View\StudentForm_CourseButton.resx">
+      <DependentUpon>StudentForm_CourseButton.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Area\StudentAreas\View\StudentForm_Progess.resx">
+      <DependentUpon>StudentForm_Progess.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Area\StudentAreas\View\StudentForm_StudentFee.resx">
+      <DependentUpon>StudentForm_StudentFee.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Area\StudentAreas\View\StudentForm_StudentProfile.resx">
+      <DependentUpon>StudentForm_StudentProfile.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Area\StudentAreas\View\StudentMainForm.resx">
+      <DependentUpon>StudentMainForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Area\StudentAreas\View\StudentScore.resx">
+      <DependentUpon>StudentScore.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Area\StudentAreas\View\StudentViewTheirClass.resx">
+      <DependentUpon>StudentViewTheirClass.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Area\StudentAreas\View\ViewLearningScore.resx">
+      <DependentUpon>ViewLearningScore.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Area\StudentAreas\View\ViewSchedule.resx">
+      <DependentUpon>ViewSchedule.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Area\StudentAreas\View\ViewTuition.resx">
+      <DependentUpon>ViewTuition.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Area\StudentAreas\View\ViewYourClass.resx">
+      <DependentUpon>ViewYourClass.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CustomControl\TextBox.resx">
+      <DependentUpon>TextBox.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form1.aa-DJ.resx">
+      <DependentUpon>Form1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form1.aa.resx">
+      <DependentUpon>Form1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form1.resx">
+      <DependentUpon>Form1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form2.resx">
+      <DependentUpon>Form2.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\ForgetPassView.resx">
+      <DependentUpon>ForgetPassView.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\Login.resx">
+      <DependentUpon>Login.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\MatchingCalendar.resx">
+      <DependentUpon>MatchingCalendar.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\PINLogin.resx">
+      <DependentUpon>PINLogin.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <EmbeddedResource Include="View\QRLogin.resx">
+      <DependentUpon>QRLogin.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Register.resx">
+      <DependentUpon>Register.cs</DependentUpon>
+    </EmbeddedResource>
+    <None Include="DBUniversity1DataSet.xsc">
+      <DependentUpon>DBUniversity1DataSet.xsd</DependentUpon>
+    </None>
+    <None Include="DBUniversity1DataSet.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DBUniversity1DataSet.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="DBUniversity1DataSet.xss">
+      <DependentUpon>DBUniversity1DataSet.xsd</DependentUpon>
+    </None>
+    <None Include="khangdbUniversity.xsc">
+      <DependentUpon>khangdbUniversity.xsd</DependentUpon>
+    </None>
+    <None Include="khangdbUniversity.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>khangdbUniversity.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="khangdbUniversity.xss">
+      <DependentUpon>khangdbUniversity.xsd</DependentUpon>
+    </None>
+    <None Include="Model\dbUniversity.dbml">
+      <Generator>MSLinqToSQLGenerator</Generator>
+      <LastGenOutput>dbUniversity.designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Model\dbUniversity.dbml.layout">
+      <DependentUpon>dbUniversity.dbml</DependentUpon>
+    </None>
+    <None Include="packages.config" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+    <None Include="UniversityDataSet.xsc">
+      <DependentUpon>UniversityDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="UniversityDataSet.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>UniversityDataSet.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="UniversityDataSet.xss">
+      <DependentUpon>UniversityDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="UniversityDataSet1.xsc">
+      <DependentUpon>UniversityDataSet1.xsd</DependentUpon>
+    </None>
+    <None Include="UniversityDataSet1.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>UniversityDataSet1.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="UniversityDataSet1.xss">
+      <DependentUpon>UniversityDataSet1.xsd</DependentUpon>
+    </None>
+    <None Include="UniversityDataSet10.xsc">
+      <DependentUpon>UniversityDataSet10.xsd</DependentUpon>
+    </None>
+    <None Include="UniversityDataSet10.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>UniversityDataSet10.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="UniversityDataSet10.xss">
+      <DependentUpon>UniversityDataSet10.xsd</DependentUpon>
+    </None>
+    <None Include="UniversityDataSet11.xsc">
+      <DependentUpon>UniversityDataSet11.xsd</DependentUpon>
+    </None>
+    <None Include="UniversityDataSet11.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>UniversityDataSet11.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="UniversityDataSet11.xss">
+      <DependentUpon>UniversityDataSet11.xsd</DependentUpon>
+    </None>
+    <None Include="UniversityDataSet12.xsc">
+      <DependentUpon>UniversityDataSet12.xsd</DependentUpon>
+    </None>
+    <None Include="UniversityDataSet12.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>UniversityDataSet12.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="UniversityDataSet12.xss">
+      <DependentUpon>UniversityDataSet12.xsd</DependentUpon>
+    </None>
+    <None Include="UniversityDataSet13.xsc">
+      <DependentUpon>UniversityDataSet13.xsd</DependentUpon>
+    </None>
+    <None Include="UniversityDataSet13.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>UniversityDataSet13.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="UniversityDataSet13.xss">
+      <DependentUpon>UniversityDataSet13.xsd</DependentUpon>
+    </None>
+    <None Include="UniversityDataSet14.xsc">
+      <DependentUpon>UniversityDataSet14.xsd</DependentUpon>
+    </None>
+    <None Include="UniversityDataSet14.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>UniversityDataSet14.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="UniversityDataSet14.xss">
+      <DependentUpon>UniversityDataSet14.xsd</DependentUpon>
+    </None>
+    <None Include="UniversityDataSet15.xsc">
+      <DependentUpon>UniversityDataSet15.xsd</DependentUpon>
+    </None>
+    <None Include="UniversityDataSet15.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>UniversityDataSet15.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="UniversityDataSet15.xss">
+      <DependentUpon>UniversityDataSet15.xsd</DependentUpon>
+    </None>
+    <None Include="UniversityDataSet16.xsc">
+      <DependentUpon>UniversityDataSet16.xsd</DependentUpon>
+    </None>
+    <None Include="UniversityDataSet16.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>UniversityDataSet16.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="UniversityDataSet16.xss">
+      <DependentUpon>UniversityDataSet16.xsd</DependentUpon>
+    </None>
+    <None Include="UniversityDataSet2.xsc">
+      <DependentUpon>UniversityDataSet2.xsd</DependentUpon>
+    </None>
+    <None Include="UniversityDataSet2.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>UniversityDataSet2.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="UniversityDataSet2.xss">
+      <DependentUpon>UniversityDataSet2.xsd</DependentUpon>
+    </None>
+    <None Include="UniversityDataSet3.xsc">
+      <DependentUpon>UniversityDataSet3.xsd</DependentUpon>
+    </None>
+    <None Include="UniversityDataSet3.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>UniversityDataSet3.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="UniversityDataSet3.xss">
+      <DependentUpon>UniversityDataSet3.xsd</DependentUpon>
+    </None>
+    <None Include="UniversityDataSet4.xsc">
+      <DependentUpon>UniversityDataSet4.xsd</DependentUpon>
+    </None>
+    <None Include="UniversityDataSet4.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>UniversityDataSet4.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="UniversityDataSet4.xss">
+      <DependentUpon>UniversityDataSet4.xsd</DependentUpon>
+    </None>
+    <None Include="UniversityDataSet5.xsc">
+      <DependentUpon>UniversityDataSet5.xsd</DependentUpon>
+    </None>
+    <None Include="UniversityDataSet5.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>UniversityDataSet5.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="UniversityDataSet5.xss">
+      <DependentUpon>UniversityDataSet5.xsd</DependentUpon>
+    </None>
+    <None Include="UniversityDataSet6.xsc">
+      <DependentUpon>UniversityDataSet6.xsd</DependentUpon>
+    </None>
+    <None Include="UniversityDataSet6.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>UniversityDataSet6.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="UniversityDataSet6.xss">
+      <DependentUpon>UniversityDataSet6.xsd</DependentUpon>
+    </None>
+    <None Include="UniversityDataSet7.xsc">
+      <DependentUpon>UniversityDataSet7.xsd</DependentUpon>
+    </None>
+    <None Include="UniversityDataSet7.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>UniversityDataSet7.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="UniversityDataSet7.xss">
+      <DependentUpon>UniversityDataSet7.xsd</DependentUpon>
+    </None>
+    <None Include="UniversityDataSet8.xsc">
+      <DependentUpon>UniversityDataSet8.xsd</DependentUpon>
+    </None>
+    <None Include="UniversityDataSet8.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>UniversityDataSet8.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="UniversityDataSet8.xss">
+      <DependentUpon>UniversityDataSet8.xsd</DependentUpon>
+    </None>
+    <None Include="UniversityDataSet9.xsc">
+      <DependentUpon>UniversityDataSet9.xsd</DependentUpon>
+    </None>
+    <None Include="UniversityDataSet9.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>UniversityDataSet9.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="UniversityDataSet9.xss">
+      <DependentUpon>UniversityDataSet9.xsd</DependentUpon>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-menu.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{3259AA49-8AA1-44D3-9025-A0B520596A8C}" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-home-50.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-user.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icon5.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-course-50.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-macbook-money-50.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-diploma-100.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\close.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-close-48.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-minimize-24.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-logout-50.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-logout-501.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-male-user.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-search-50.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="MetroFramework.txt" />
+    <None Include="Resources\icon36.png" />
+    <None Include="Resources\icon35.png" />
+    <None Include="Resources\icon34.png" />
+    <None Include="Resources\icon33.png" />
+    <None Include="Resources\icon32.png" />
+    <None Include="Resources\icon31.png" />
+    <None Include="Resources\icon3.png" />
+    <None Include="Resources\icons8-delete-100.png" />
+    <None Include="Resources\icons8-down-24 %281%293.png" />
+    <None Include="Resources\icons8-people-641.png" />
+    <None Include="Resources\icons8-statistic-64.png" />
+    <None Include="Resources\icons8-view-100.png" />
+    <None Include="Resources\icons8-edit.gif" />
+    <None Include="Resources\icons8-add-selection-641.png" />
+    <None Include="Resources\icons8-add-selection-64.png" />
+    <None Include="Resources\icons8-down-24 %281%292.png" />
+    <None Include="Resources\icons8-down-24 %281%291.png" />
+    <None Include="Resources\icons8-down-24 %281%29.png" />
+    <None Include="Resources\icons8-class-100.png" />
+    <None Include="Resources\icons8-class-16.png" />
+    <None Include="Resources\icons8-people-64.png" />
+    <None Include="Resources\icons8-document-91.png" />
+    <None Include="Resources\367360339_1118737012843888_6418303228561789279_n.png" />
+    <None Include="Resources\icons8-school-80.png" />
+    <None Include="Resources\icons8-school-48.png" />
+    <None Include="Resources\icons8-lantern-100.png" />
+    <None Include="Resources\2_8140331703058478.jpg" />
+    <None Include="Resources\2_8927811703128122.jpg" />
+    <None Include="Resources\2_5303281703130538.jpg" />
+    <None Include="Resources\5850621703157364.jpg" />
+    <None Include="Resources\icons8-news-1001.png" />
+    <None Include="Resources\icons8-news-100.png" />
+    <None Include="Resources\icons8-left-901.png" />
+    <None Include="Resources\icons8-left-90.png" />
+    <None Include="Resources\icons8-right-90.png" />
+    <None Include="Resources\mung-1-tet-2024-la-ngay-may-duong-lich_1925b508.png" />
+    <None Include="Resources\nghi-tet-2021-620-v1.png" />
+    <None Include="Resources\DSC08645%282%29.jpg" />
+    <None Include="Resources\1703244058112.558.png" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>
