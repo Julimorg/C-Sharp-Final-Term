@@ -34,7 +34,7 @@ Go to release to download WinrarxD
 
 ![image](https://github.com/Julimorg/C-Sharp-Final-Term/assets/94731256/c4f14094-ef99-4f77-96c8-008e4d6d6942)</br>
 
-7. You may see the code sql in the ConnecString</br>
+7. You may see the code sql in the ConnectString</br>
 
 ![image](https://github.com/Julimorg/C-Sharp-Final-Term/assets/94731256/893351bc-032e-485b-b440-0549f3f869fc)</br>
 
