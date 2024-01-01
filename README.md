@@ -1,4 +1,4 @@
-    Our Group Members:</br>
+        Our Group Members
 1.Nguyễn Bùi Anh Khoa</br>
 2.Nguyễn Ngọc Nguyên Khang</br>
 3.Nguyễn Hoàng Khang</br>
@@ -6,8 +6,10 @@
 5.Võ Minh Nhựt</br>
 6.Ngô Thành Tài</br>
 
-   Download File </br>
+         Download File 
 Go to release to download WinrarxD
 
-Guidance:</br> Local SQL on other Devices
+Guidance:</br>
+
+Local SQL on other Devices
 
