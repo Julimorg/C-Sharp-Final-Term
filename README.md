@@ -22,8 +22,7 @@ Go to release to download WinrarxD
 
 ![image](https://github.com/Julimorg/C-Sharp-Final-Term/assets/94731256/64c78388-a25f-4cb7-867b-9ec83e5d3640)</br>
 
-
-         ==> It will show in your Database</br>
+==> It will show in your Database</br>
          
 ![image](https://github.com/Julimorg/C-Sharp-Final-Term/assets/94731256/d63a2cc4-2e66-4dd0-9bc2-6cc8ad574084)</br>
 
